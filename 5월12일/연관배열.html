@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // key와 value의 쌍으로 된 자료를 배열로 나열 한 것이 연관배열이다.
+        // 연관배열 정의 시에는 {}를 사용
+
+        var dict = {'a' : '부정관사', 'boy' : '소년', 'girl' : '소녀', 'zoo' : '동물원'};
+        dict['socre'] = '20,점수';
+        dict.name = '이름';
+        // girl이라는 단어의 뜻을 알고싶다.
+        document.write("girl의 뜻 : " + dict['girl'] + "<br>");
+        document.write("girl의 뜻 : " + dict.girl + '<br>');
+
+        // 연관배열의 모든 자료목록 얻기
+        for(index in dict) {    //향상된 for문
+            document.write(index + ":" + dict[index]+ "<br>")
+        }
+    </script>
+</body>
+</html>

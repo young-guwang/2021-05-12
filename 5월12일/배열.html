@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index Of : 배열에서 자료의 위치(index값) 알기 </title>
+</head>
+<body>
+    <script>
+        var names = ['길동','세리','찬호','길동','영광','길동','지효','두환']
+        // 길동의 인덱스 (앞에서 찾을 때)
+        var firstPos = names.indexOf('길동');
+        document.write("첫머리 : " + firstPos + "<br>");
+        var secondPos = names.indexOf('길동', firstPos + 1);
+        document.write("두번째 : " + secondPos + "<br>");
+        var lastPos = names.lastIndexOf('길동');
+        document.write("끝머리: " + lastPos +"<br>");
+
+        // for 문으로 모두 찾기
+        var pos = -1;
+        for(let i = 0; ; i++){
+            pos = names.indexOf('길동', pos + 1);
+            if(pos === -1) break;
+            document.write("길동의 위치 : " + pos + "<br>");
+        }
+    </script>
+</body>
+</html>

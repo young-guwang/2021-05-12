@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>   
+        var students = ['홍길동', '홍경래', '임꺽정', '김두환'];
+        var kor = [78, 99, 67, 90];
+        var eng = [87, 45, 56, 78];
+        var math = [78, 89, 88, 99];
+        var data = { '학생': students, '국어': kor, '영어': eng, '수학': math };
+        // 모든 성적 자료를 조회하기
+        for (x in data) {
+            document.write(x + ": ");
+            for (let i = 0; i < data[x].length; i++) {
+                document.write(data[x][i] + "&nbsp");
+            }
+            document.write("<br>");
+        }
+        // 총점, 평균 내기
+        var scores = [kor,eng,math];
+        var total = [0,0,0,0];
+        for(let i = 0; i<scores.length; i++){
+            for(let j = 0; j<scores[i].length; j++){
+                total[j] += scores[i][j];
+            }
+        }
+        var avg = [0,0,0,0];
+        for(let i =0; i<total.length; i++){
+            avg[i] = Math.round(total[i]/3*100)/100;
+        }
+        data.총점 = total;
+        data.평균 = avg;
+
+        // table로 화면 구현 하기
+        document.write("<table border='5' align='center' width='40%'>");
+        for (x in data) {
+            document.write("<tr align='center'>");
+            document.write("<th>");
+            document.write(x);
+            document.write("</th>");
+            for (let i = 0; i < data[x].length; i++) {
+                document.write("<td>");
+                document.write(data[x][i] + "&nbsp");
+                document.write("</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        for(var i=0; i<students.length; i++){
+            sum = 0;        // sum값 초기화
+            for(var j=0; j<scores[i].length; j++){
+                sum += scores[i][j];
+            }
+            document.write(students[i] + "의 총점 : " + sum + "<br>");
+        }
+
+    </script>
+</body>
+
+</html>
